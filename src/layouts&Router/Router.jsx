@@ -2,10 +2,12 @@ import React from "react"
 import { Route, Routes } from "react-router-dom";
 import Welcome from "../pages/general/Welcome";
 import Login from "../pages/general/Login";
+import LayoutOperator from "./LayoutOperator";
+import Landing from "../pages/both/Landing";
 // import { useAuth } from './AuthContext';
 
 const Router = () => {
-    const user = null;
+    const user = "operator";
     return(
         <Routes>
             {user?(
@@ -28,7 +30,8 @@ const Router = () => {
                     </>
                 ) : user == "operator"?(
                 <>
-                    <Route path="/" element={<LayoutOperator />}>
+                    <Route path="/" element={<Landing/>}/>
+                    <Route path="/another" element={<LayoutOperator />}>
                         {/* <Route path="/" element={<Home />} /> */}
                         {/* <Route path="*" element={<NotFound/>} /> */}
                     </Route>

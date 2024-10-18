@@ -1,1 +1,26 @@
 import React from "react";
+import NavBarUser from "../../components/navbars/NavbarUser";
+import img from "../../assets/welcome/welcome_img.svg";
+import { Link } from "react-router-dom";
+
+const Landing = () => {
+    return (
+        <div className="h-screen overflow-hidden">
+        <NavBarUser />
+        <div className="flex flex-col md:flex-row justify-center h-full p-4">
+            <div className="flex flex-col justify-evenly items-center md:items-start mr-10">
+                <h1 className="text-4xl md:text-7xl font-bold text-center md:text-left">Built for You, Loved by Employees</h1>
+                <p className="text-lg text-center md:text-left mb-4">This app is designed for employees in order to better organize their tasks and visualize machines status</p>
+                <Link to={"login"}>
+                <button className="bg-[#B8FF01] mb-5 py-4 px-12 rounded-2xl flex items-center justify-center whitespace-nowrap w-fit text-black font-bold hover:shadow-md">Get started</button>
+                </Link>
+            </div>
+            <div className="flex flex-col justify-end w-full mt-8 md:mt-0">
+                <img src={img} alt="manufacturer image" className="w-full h-auto object-contain" />
+            </div>
+        </div>
+    </div>
+    );
+}
+
+export default Landing;
