@@ -1,8 +1,8 @@
 import React from "react";
-import Login_image from "../assets/login/Login.jpg";
-import car from "../assets/login/car.jpg";
-import dots from "../assets/login/circle_dotted.svg";
-import lines from "../assets/login/italic_lines.svg"
+import Login_image from "../../assets/login/Login.jpg";
+import car from "../../assets/login/car.jpg";
+import dots from "../../assets/login/circle_dotted.svg";
+import lines from "../../assets/login/italic_lines.svg"
 
 const Login = () => {
     return(
