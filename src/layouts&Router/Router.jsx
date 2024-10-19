@@ -30,8 +30,8 @@ const Router = () => {
                     </>
                 ) : user == "operator"?(
                 <>
-                    <Route path="/" element={<Landing/>}/>
-                    <Route path="/another" element={<LayoutOperator />}>
+                    <Route path="/landing" element={<Landing/>}/>
+                    <Route path="/" element={<LayoutOperator />}>
                         {/* <Route path="/" element={<Home />} /> */}
                         {/* <Route path="*" element={<NotFound/>} /> */}
                     </Route>

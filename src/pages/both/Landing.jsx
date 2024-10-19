@@ -11,7 +11,7 @@ const Landing = () => {
             <div className="flex flex-col justify-evenly items-center md:items-start mr-10">
                 <h1 className="text-4xl md:text-7xl font-bold text-center md:text-left">Built for You, Loved by Employees</h1>
                 <p className="text-lg text-center md:text-left mb-4">This app is designed for employees in order to better organize their tasks and visualize machines status</p>
-                <Link to={"login"}>
+                <Link to={"../"}>
                 <button className="bg-[#B8FF01] mb-5 py-4 px-12 rounded-2xl flex items-center justify-center whitespace-nowrap w-fit text-black font-bold hover:shadow-md">Get started</button>
                 </Link>
             </div>
