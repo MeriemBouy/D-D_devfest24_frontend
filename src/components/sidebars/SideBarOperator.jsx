@@ -25,7 +25,7 @@ const SideBarOperator = () => {
                 },
                 { 
                     title: "Production Tracking", 
-                    route: "/dashboard/production-tracking", 
+                    route: "/productiontraffic", 
                     icon: "https://img.icons8.com/?size=100&id=9321&format=png&color=000000" 
                 },
                 { 
