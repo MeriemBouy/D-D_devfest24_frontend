@@ -16,21 +16,21 @@ const NavBarUser = () => {
                 <p className="ml-2 text-2xl font-bold">Tasker</p>
             </div>
             <div className="hidden md:flex md:w-full md:justify-between md:items-center">
-                <Link to="home">
+                <Link to="../landing">
                     <p className="text-black hover:underline cursor-pointer">Home</p>
                 </Link>
-                <Link to="tasks/pending">
+                <Link to="../tasks/pending">
                     <p className="text-black hover:underline cursor-pointer">My tasks</p>
                 </Link>
-                <Link to="alerts">
+                <Link to="../alerts">
                     <p className="text-black hover:underline cursor-pointer">Alerts</p>
                 </Link>
-                <Link to="dashboard">
+                <Link to="../dashboard">
                     <p className="text-black hover:underline cursor-pointer">Dashboard</p>
                 </Link>
             </div>
             <div className="hidden w-full md:flex md:justify-end pr-3">
-                <Link to="profile">
+                <Link to="../profile">
                     <img src={profile} alt="profile icon" />
                 </Link>
             </div>
