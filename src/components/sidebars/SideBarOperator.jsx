@@ -42,17 +42,17 @@ const SideBarOperator = () => {
             subMenus: [
                 { 
                     title: "Pending tasks", 
-                    route: "/tasks/overview", 
+                    route: "/tasks/pending", 
                     icon: "https://img.icons8.com/ios-filled/50/000000/todo-list.png" 
                 },
                 { 
                     title: "Left tasks", 
-                    route: "/tasks/details", 
+                    route: "/tasks/notStarted", 
                     icon: "https://img.icons8.com/ios-filled/50/000000/task.png" 
                 },
                 { 
                     title: "Completed tasks", 
-                    route: "/tasks/statistics", 
+                    route: "/tasks/completed", 
                     icon: "https://img.icons8.com/ios-filled/50/000000/checkmark.png" 
                 },
             ]

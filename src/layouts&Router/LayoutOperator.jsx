@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import NavBarUser from "../components/navbars/NavbarUser";
+import NavBar from "../components/navbars/NavBar";
 import SideBarOperator from "../components/sidebars/SideBarOperator";
 import RightPanel from "../components/sidebars/RightPanel";
 
@@ -13,7 +13,7 @@ const LayoutOperator = () => {
             {/* Main content area in the middle */}
             <div className="flex flex-col flex-grow">
                 {/* Navbar on top, full width minus the sidebar */}
-                <NavBarUser />
+                <NavBar />
                 
                 <div className="flex flex-grow">
                     {/* Outlet for the main content */}
