@@ -7,7 +7,7 @@ const LayoutOperator = () => {
         <div className="h-screen overflow-hidden">
         <NavBarUser/>
         <SideBarOperator/>
-        <Outlet/>
+        {/* <Outlet/> */}
         </div>
     );
 }
