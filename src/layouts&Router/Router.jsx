@@ -14,6 +14,7 @@ import ProductionTraffic from "../pages/dashboardoperator/ProductionTraffic";
 import Energytracking from "../pages/dashboardoperator/Energytracking";
 // import { useAuth } from './AuthContext';
 import AddOperator from "../pages/AddOperator"; 
+import OperatorList from "../components/OperatorList";
 
 const Router = () => {
     const user = "manager";
@@ -36,8 +37,10 @@ const Router = () => {
                             <Route path="/Contact" element={<Contact />} />
                             <Route path="*" element={<NotFound/>} />
                         </Route> */}
+                        <Route path="/landing" element={<Landing/>}/>
+                        <Route path="/add-operator" element={<AddOperator/>} />
                         <Route path="/" element={<LayoutManager />}>
-                            <Route path="/add-operator" element={<AddOperator />} />
+                           <Route path="/operators" element={<OperatorList/>}/>
                             {/* Other routes for manager */}
                         </Route>
                     </>
