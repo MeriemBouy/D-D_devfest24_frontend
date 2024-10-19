@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo/logo.svg";
+import FlowTrack from "../../assets/logo/FlowTrack..svg";
 import profile from "../../assets/icons/profile.svg";
 import { Link } from "react-router-dom";
 import menu from "../../assets/icons/menu.svg";
@@ -12,14 +12,14 @@ const NavBarUser = () => {
     <nav className="shadow-lg w-full mx-auto py-4 lg">
         <div className="bg-white flex justify-between">
             <div className="flex justify-start pl-3 items-center w-full">
-                <img src={logo} alt="Website logo"/>
-                <p className="ml-2 text-2xl font-bold">Tasker</p>
+                <img src={FlowTrack} alt="Website logo"/>
+                {/* <p className="ml-2 text-2xl font-bold">Tasker</p> */}
             </div>
             <div className="hidden md:flex md:w-full md:justify-between md:items-center">
                 <Link to="/">
                     <p className="text-black hover:underline cursor-pointer">Home</p>
                 </Link>
-                <Link to="tasks/pending">
+                <Link to="../tasks/pending">
                     <p className="text-black hover:underline cursor-pointer">My tasks</p>
                 </Link>
                 <Link to="alerts">

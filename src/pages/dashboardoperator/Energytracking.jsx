@@ -71,7 +71,7 @@ const EnergyTracking = () => {
               }}
             >
               <Box p={2}>
-                <Typography variant="subtitle1" gutterBottom>
+                <Typography variant="subtitle2" gutterBottom>
                   {card.title}
                 </Typography>
                 <Typography variant="h6" align="center">
