@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+// Assure-toi d'avoir importé Font Awesome ou une autre bibliothèque d'icônes
+import { FaExclamationTriangle, FaThermometerHalf, FaLeaf } from 'react-icons/fa';
 
 const RightPanel = () => {
   const [alerts, setAlerts] = useState([]);
@@ -8,9 +10,9 @@ const RightPanel = () => {
   useEffect(() => {
     const fetchAlertsAndTasks = () => {
       const sampleAlerts = [
-        { message: 'High Energy Consumption Alert', type: 'bg-red-100 text-red-800' },
-        { message: 'Overheating Alert', type: 'bg-yellow-100 text-yellow-800' },
-        { message: 'Energy Efficiency Drop Alert', type: 'bg-green-100 text-green-800' },
+        { message: 'High Energy Consumption Alert', type: 'bg-red-100 text-red-800', icon: <FaExclamationTriangle /> },
+        { message: 'Overheating Alert', type: 'bg-yellow-100 text-yellow-800', icon: <FaThermometerHalf /> },
+        { message: 'Energy Efficiency Drop Alert', type: 'bg-green-100 text-green-800', icon: <FaLeaf /> },
       ];
       
       const sampleTasks = [
@@ -43,7 +45,7 @@ const RightPanel = () => {
   return (
     <div>
       {isVisible && (
-        <div className="w-full max-w-xs bg-white p-4 shadow-lg rounded-lg relative">
+        <div className="w-full max-w-xs bg-white p-4 shadow-lg rounded-lg relative text-sm"> {/* Réduction de la taille globale du texte */}
           <button 
             className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
             onClick={toggleVisibility}
@@ -57,7 +59,8 @@ const RightPanel = () => {
             </h2>
             <div className="space-y-2">
               {alerts.map((alert, index) => (
-                <div key={index} className={`p-2 rounded-md ${alert.type}`}>
+                <div key={index} className={`p-2 rounded-md flex items-center ${alert.type}`}>
+                  <span className="mr-2">{alert.icon}</span> {/* Ajout de l'icône */}
                   {alert.message}
                 </div>
               ))}
@@ -71,7 +74,8 @@ const RightPanel = () => {
             <div className="space-y-2">
               {tasks.map((task, index) => (
                 <div key={index} className="bg-gray-100 text-gray-800 p-2 rounded-md">
-                  {task.description} - {task.timestamp}
+                  <div>{task.description}</div>
+                  <span className="text-xs text-gray-500">{task.timestamp}</span> {/* Temps sous la tâche avec écriture plus petite et moins foncée */}
                 </div>
               ))}
             </div>

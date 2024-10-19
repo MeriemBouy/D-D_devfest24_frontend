@@ -13,9 +13,9 @@ import RealTimeMonitoring from "../pages/dashboardoperator/RealTimeMonitoring";
 import ProductionTraffic from "../pages/dashboardoperator/ProductionTraffic";
 import Energytracking from "../pages/dashboardoperator/Energytracking";
 import AddOperator from "../pages/Manager/AddOperator";
-import LayoutManager from "./LayoutManager";
+//import LayoutManager from "./LayoutManager";
 // import { useAuth } from './AuthContext';
-import AddOperator from "../pages/AddOperator"; 
+//import AddOperator from "../pages/AddOperator"; 
 import OperatorList from "../components/OperatorList";
 
 const Router = () => {
