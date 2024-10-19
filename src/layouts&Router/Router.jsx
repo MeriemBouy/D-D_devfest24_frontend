@@ -7,6 +7,10 @@ import Landing from "../pages/both/Landing";
 import PendingTasks from "../pages/both/PendingTasks";
 import CompletedTasks from "../pages/both/CompletedTasks";
 import NotStartedTasks from "../pages/both/NotStartedTasks";
+import Dashboard from "../pages/dashboardoperator/overview";
+import RealTimeMonitoring from "../pages/dashboardoperator/RealTimeMonitoring";
+import ProductionTraffic from "../pages/dashboardoperator/ProductionTraffic";
+import Energytracking from "../pages/dashboardoperator/Energytracking";
 // import { useAuth } from './AuthContext';
 
 const Router = () => {
@@ -38,6 +42,11 @@ const Router = () => {
                         <Route path="/tasks/pending" element={<PendingTasks />} />
                         <Route path="/tasks/completed" element={<CompletedTasks />} />
                         <Route path="/tasks/notStarted" element={<NotStartedTasks />} />
+                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/realtimemonitoring" element={<RealTimeMonitoring />} />
+                        <Route path="/productiontraffic" element={<ProductionTraffic />} />
+                        <Route path="/energytracking" element={<Energytracking/>} />
+                       
                         {/* <Route path="*" element={<NotFound/>} /> */}
                     </Route>
                 </>
