@@ -30,7 +30,7 @@ const SideBarOperator = () => {
                 },
                 { 
                     title: "Energy Tracking", 
-                    route: "/dashboard/energy-tracking", 
+                    route: "/energytracking", 
                     icon: "https://img.icons8.com/ios-filled/50/000000/lightning-bolt.png" 
                 },
             ]
