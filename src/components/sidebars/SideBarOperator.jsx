@@ -7,14 +7,14 @@ import alerts from "../../assets/sidebar/alerts.svg";
 const SideBarOperator = () => {
     const [open, setOpen] = useState(true);
     const Menus = [
-        { title: "Dashboard", src: dashboard },
+        { title: "Dashboard", src: dashboard},
         { title: "Profile", src: profileIcon},
         { title: "My tasks", src: tasks},
         { title: "Alerts", src: alerts},
         ];
 
     return (
-                <div className="flex h-screen">
+                <div className="flex">
                   {/* Sidebar */}
                   <div
                     className={`${

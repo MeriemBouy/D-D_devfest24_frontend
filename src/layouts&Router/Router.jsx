@@ -4,6 +4,9 @@ import Welcome from "../pages/general/Welcome";
 import Login from "../pages/general/Login";
 import LayoutOperator from "./LayoutOperator";
 import Landing from "../pages/both/Landing";
+import PendingTasks from "../pages/both/PendingTasks";
+import CompletedTasks from "../pages/both/CompletedTasks";
+import NotStartedTasks from "../pages/both/NotStartedTasks";
 // import { useAuth } from './AuthContext';
 
 const Router = () => {
@@ -32,7 +35,9 @@ const Router = () => {
                 <>
                     <Route path="/landing" element={<Landing/>}/>
                     <Route path="/" element={<LayoutOperator />}>
-                        {/* <Route path="/" element={<Home />} /> */}
+                        <Route path="/tasks/pending" element={<PendingTasks />} />
+                        <Route path="/tasks/completed" element={<CompletedTasks />} />
+                        <Route path="/tasks/notStarted" element={<NotStartedTasks />} />
                         {/* <Route path="*" element={<NotFound/>} /> */}
                     </Route>
                 </>
