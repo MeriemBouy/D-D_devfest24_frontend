@@ -1,10 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import Login_image from "../../assets/login/Login.jpg";
 import car from "../../assets/login/car.jpg";
 import dots from "../../assets/login/circle_dotted.svg";
-import lines from "../../assets/login/italic_lines.svg"
+import lines from "../../assets/login/italic_lines.svg";
+import { useAuth } from "../../context/AuthContext";
+// import { login } from "../../services/authApi";
+// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  let {loginUser} = useAuth();
+
+  const [error, setError] = useState(null);
+  // const navigate = useNavigate();
+
+//   const onSubmit = async () => {
+//     try {
+//         setError(null);
+//         if (!email) {
+//             setError("Email must not be empty!");
+//             return;
+//         }
+
+//         if (!password) {
+//             setError("Password must not be empty!");
+//             return;
+//         }
+
+//         const userData = {
+//             email: email,
+//             password: password,
+//         };
+
+//         const response = await login(userData);
+//         if (response && response.msg && response.user) {
+//             setSuccessfulMessage(response.msg);
+//             await handleLogin(response.user);
+//             const userRole = response.user.is_admin ? "admin" : "user";
+//             navigate("/", { state: { userRole } });
+//         } else {
+//             if (response && response.error) {
+//                 setError(response.error);
+//             }
+//         }
+//     } catch (error) {
+//         console.error("Error in handleLogin:", error);
+//         setError("Unexpected rror");
+//     }
+// };
+
     return(
     <section className="h-screen overflow-hidden flex flex-col md:flex-row justify-around items-center ">
     <div className="flex flex-col justify-around mb-7 ml-2 md:ml-0 h-full">
@@ -12,13 +58,15 @@ const Login = () => {
         <div className="font-bold text-4xl">
             <h1>Login</h1>
         </div>
-        <form action="">
+        <form onSubmit={loginUser}>
         <label>
-          Email
+          Username
           <input
         className="text-sm w-full bg-[#F7FBFF] px-4 py-2 border border-solid border-gray-300 rounded-lg mb-4"
         type="text"
-        placeholder="Example@email.com"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
         </label>    
         <label>
@@ -27,8 +75,11 @@ const Login = () => {
         className="text-sm w-full bg-[#F7FBFF] px-4 py-2 border border-solid border-gray-300 rounded-lg"
         type="password"
         placeholder="At least 8 characters"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
         </label>
+        {error && <div className="text-red-500 mt-2">{error}</div>}
       <div className="mt-4 flex justify-end font-semibold text-sm">
         <a
           className="text-black hover:underline"
