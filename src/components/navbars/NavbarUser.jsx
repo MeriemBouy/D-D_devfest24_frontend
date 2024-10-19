@@ -19,7 +19,7 @@ const NavBarUser = () => {
                 <Link to="home">
                     <p className="text-black hover:underline cursor-pointer">Home</p>
                 </Link>
-                <Link to="tasks/pending">
+                <Link to="../tasks/pending">
                     <p className="text-black hover:underline cursor-pointer">My tasks</p>
                 </Link>
                 <Link to="alerts">
