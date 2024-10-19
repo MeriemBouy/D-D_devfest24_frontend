@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Welcome from "../pages/general/Welcome";
 import Login from "../pages/general/Login";
 import LayoutOperator from "./LayoutOperator";
+import LayoutManager from "./LayoutManager";
 import Landing from "../pages/both/Landing";
 import PendingTasks from "../pages/both/PendingTasks";
 import CompletedTasks from "../pages/both/CompletedTasks";
@@ -12,9 +13,11 @@ import RealTimeMonitoring from "../pages/dashboardoperator/RealTimeMonitoring";
 import ProductionTraffic from "../pages/dashboardoperator/ProductionTraffic";
 import Energytracking from "../pages/dashboardoperator/Energytracking";
 // import { useAuth } from './AuthContext';
+import AddOperator from "../pages/AddOperator"; 
+import OperatorList from "../components/OperatorList";
 
 const Router = () => {
-    const user = "operator";
+    const user = "manager";
     return(
         <Routes>
             {user?(
@@ -34,6 +37,12 @@ const Router = () => {
                             <Route path="/Contact" element={<Contact />} />
                             <Route path="*" element={<NotFound/>} />
                         </Route> */}
+                        <Route path="/landing" element={<Landing/>}/>
+                        <Route path="/add-operator" element={<AddOperator/>} />
+                        <Route path="/" element={<LayoutManager />}>
+                           <Route path="/operators" element={<OperatorList/>}/>
+                            {/* Other routes for manager */}
+                        </Route>
                     </>
                 ) : user == "operator"?(
                 <>
