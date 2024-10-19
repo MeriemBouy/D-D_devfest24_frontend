@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // Assure-toi d'avoir importé Font Awesome ou une autre bibliothèque d'icônes
-import { FaExclamationTriangle, FaThermometerHalf, FaLeaf } from 'react-icons/fa';
+import { FaExclamationTriangle, FaThermometerHalf, FaLeaf, FaPlus } from 'react-icons/fa';
 
 const RightPanel = () => {
   const [alerts, setAlerts] = useState([]);
@@ -45,7 +45,7 @@ const RightPanel = () => {
   return (
     <div>
       {isVisible && (
-        <div className="w-full max-w-xs bg-white p-4 shadow-lg rounded-lg relative text-sm"> {/* Réduction de la taille globale du texte */}
+        <div className="w-full max-w-sm bg-white p-4 shadow-lg rounded-lg relative text-sm"> {/* Réduction de la taille globale du texte */}
           <button 
             className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
             onClick={toggleVisibility}
@@ -83,13 +83,14 @@ const RightPanel = () => {
         </div>
       )}
 
-      {/* Button to reopen the panel */}
+      {/* Small icon to open the panel */}
       {!isVisible && (
         <button 
-          className="mt-4 p-2 bg-blue-500 text-white rounded"
+          className="mt-4 p-2 text-blue-500 rounded"
           onClick={toggleVisibility}
+          aria-label="Open Panel"
         >
-          Open Panel
+          <FaPlus className="text-xl" /> {/* Small icon to open the panel */}
         </button>
       )}
     </div>
