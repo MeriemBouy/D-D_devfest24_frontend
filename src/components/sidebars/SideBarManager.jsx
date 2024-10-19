@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import dashboard from "../../assets/icons/IconSet.svg";
-import tasks from "../../assets/icons/Vector.svg";
 import userProfile from "../../assets/icons/profile.svg";
+import { useAuth } from "../../context/AuthContext";
 
 const SideBarManager = () => {
     const [open, setOpen] = useState(true);
+    const  {logoutUser} = useAuth();
 
     const Menus = [
         { 
@@ -38,11 +39,11 @@ const SideBarManager = () => {
         { 
             title: "Workers", 
             src: "https://img.icons8.com/?size=100&id=9321&format=png&color=000000", 
-            route: "/workers", 
+            route: "/operators", 
             subMenus: [
                 { 
                     title: "Workers List", 
-                    route: "/workers", 
+                    route: "/operators", 
                     icon: "https://img.icons8.com/ios-filled/50/000000/todo-list.png" 
                 },
                 { 
@@ -159,9 +160,9 @@ const SideBarManager = () => {
                         className={`flex items-center space-x-4 py-4 px-4 rounded-r-xl transition-all duration-200 cursor-pointer hover:bg-[#B8FF01] ${open ? "justify-start" : "justify-center"}`}
                     >
                         <img src="https://img.icons8.com/material-rounded/24/000000/logout-rounded.png" alt="Deconnexion" className="w-6 h-6" />
-                        <span className={`text-black font-medium text-sm ${!open && "hidden"}`}>
+                        <button onClick={logoutUser} className={`text-black font-medium text-sm ${!open && "hidden"}`}>
                             Deconnexion
-                        </span>
+                        </button>
                     </div>
                 </div>
             </div>

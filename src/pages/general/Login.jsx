@@ -4,52 +4,12 @@ import car from "../../assets/login/car.jpg";
 import dots from "../../assets/login/circle_dotted.svg";
 import lines from "../../assets/login/italic_lines.svg";
 import { useAuth } from "../../context/AuthContext";
-// import { login } from "../../services/authApi";
-// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   let {loginUser} = useAuth();
-
   const [error, setError] = useState(null);
-  // const navigate = useNavigate();
-
-//   const onSubmit = async () => {
-//     try {
-//         setError(null);
-//         if (!email) {
-//             setError("Email must not be empty!");
-//             return;
-//         }
-
-//         if (!password) {
-//             setError("Password must not be empty!");
-//             return;
-//         }
-
-//         const userData = {
-//             email: email,
-//             password: password,
-//         };
-
-//         const response = await login(userData);
-//         if (response && response.msg && response.user) {
-//             setSuccessfulMessage(response.msg);
-//             await handleLogin(response.user);
-//             const userRole = response.user.is_admin ? "admin" : "user";
-//             navigate("/", { state: { userRole } });
-//         } else {
-//             if (response && response.error) {
-//                 setError(response.error);
-//             }
-//         }
-//     } catch (error) {
-//         console.error("Error in handleLogin:", error);
-//         setError("Unexpected rror");
-//     }
-// };
 
     return(
     <section className="h-screen overflow-hidden flex flex-col md:flex-row justify-around items-center ">

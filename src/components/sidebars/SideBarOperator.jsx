@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import dashboard from "../../assets/icons/IconSet.svg";
 import tasks from "../../assets/icons/Vector.svg";
 import userProfile from "../../assets/icons/profile.svg";
+import { useAuth } from "../../context/AuthContext";
 
 const SideBarOperator = () => {
     const [open, setOpen] = useState(true);
+    const  {logoutUser} = useAuth();
 
     const Menus = [
         { 
@@ -159,9 +161,9 @@ const SideBarOperator = () => {
                         className={`flex items-center space-x-4 py-4 px-4 rounded-r-xl transition-all duration-200 cursor-pointer hover:bg-[#B8FF01] ${open ? "justify-start" : "justify-center"}`}
                     >
                         <img src="https://img.icons8.com/material-rounded/24/000000/logout-rounded.png" alt="Deconnexion" className="w-6 h-6" />
-                        <span className={`text-black font-medium text-sm ${!open && "hidden"}`}>
+                        <button onClick={logoutUser} className={`text-black font-medium text-sm ${!open && "hidden"}`}>
                             Deconnexion
-                        </span>
+                        </button>
                     </div>
                 </div>
             </div>

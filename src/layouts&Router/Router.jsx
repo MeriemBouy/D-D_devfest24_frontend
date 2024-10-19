@@ -24,9 +24,16 @@ const Router = () => {
             {userRole === "Manager" && (
                 <>
                     <Route path="/" element={<Landing />} />
-                    <Route path="/add-operator" element={<AddOperator />} />
+                    <Route path="/addoperator" element={<AddOperator />} />
                     <Route path="/" element={<LayoutManager />}>
+                        <Route path="/tasks/pending" element={<PendingTasks />} />
+                        <Route path="/tasks/completed" element={<CompletedTasks />} />
+                        <Route path="/tasks/notStarted" element={<NotStartedTasks />} />
                         <Route path="/operators" element={<OperatorList />} />
+                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/realtimemonitoring" element={<RealTimeMonitoring />} />
+                        <Route path="/productiontraffic" element={<ProductionTraffic />} />
+                        <Route path="/energytracking" element={<Energytracking/>} />
                     </Route>
                 </>
             )}
