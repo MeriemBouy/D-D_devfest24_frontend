@@ -38,7 +38,7 @@ export const AuthProvider = ({children}) => {
             localStorage.setItem('authTokens', JSON.stringify(data));
             setAuthTokens(data)
             setUser(jwtDecode(data.access))
-            navigate('/landing')
+            navigate('/')
         } else {
             alert('Check login credentials :Something went wrong while logging in the user!')
         }
@@ -55,6 +55,7 @@ export const AuthProvider = ({children}) => {
         const response = await fetch('http://127.0.0.1:8000/user/token/refresh/', {
             method: 'POST',
             headers: {
+                "X-CSRFToken": cookies.get("csrftoken"),
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({refresh:authTokens?.refresh})

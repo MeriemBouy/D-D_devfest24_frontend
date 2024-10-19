@@ -19,13 +19,11 @@ import OperatorList from "../components/OperatorList";
 const Router = () => {
     const { user } = useAuth();
     const userRole = user ? user.role : null;
-    console.log(user);
-
     return (
         <Routes>
             {userRole === "Manager" && (
                 <>
-                    <Route path="/landing" element={<Landing />} />
+                    <Route path="/" element={<Landing />} />
                     <Route path="/add-operator" element={<AddOperator />} />
                     <Route path="/" element={<LayoutManager />}>
                         <Route path="/operators" element={<OperatorList />} />
@@ -34,7 +32,7 @@ const Router = () => {
             )}
             {userRole === "Operator" && (
                 <>
-                    <Route path="/landing" element={<Landing />} />
+                    <Route path="/" element={<Landing />} />
                     <Route path="/" element={<LayoutOperator />}>
                         <Route path="/tasks/pending" element={<PendingTasks />} />
                         <Route path="/tasks/completed" element={<CompletedTasks />} />
