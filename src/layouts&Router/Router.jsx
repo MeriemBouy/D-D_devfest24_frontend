@@ -5,6 +5,7 @@ import Login from "../pages/general/Login";
 import LayoutOperator from "./LayoutOperator";
 import Landing from "../pages/both/Landing";
 import Dashboard from "../pages/dashboardoperator/overview";
+import RealTimeMonitoring from "../pages/dashboardoperator/RealTimeMonitoring";
 // import { useAuth } from './AuthContext';
 
 const Router = () => {
@@ -34,6 +35,7 @@ const Router = () => {
                     <Route path="/landing" element={<Landing/>}/>
                     <Route path="/" element={<LayoutOperator />}>
                         <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/realtimemonitoring" element={<RealTimeMonitoring />} />
                         {/* <Route path="/" element={<Home />} /> */}
                         {/* <Route path="*" element={<NotFound/>} /> */}
                     </Route>

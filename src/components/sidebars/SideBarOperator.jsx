@@ -20,7 +20,7 @@ const SideBarOperator = () => {
                 },
                 { 
                     title: "Real Time Monitoring", 
-                    route: "/dashboard/real-time-monitoring", 
+                    route: "/realtimemonitoring", 
                     icon: "https://img.icons8.com/?size=100&id=116177&format=png&color=000000" 
                 },
                 { 
