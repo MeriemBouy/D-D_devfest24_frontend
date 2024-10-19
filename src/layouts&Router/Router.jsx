@@ -3,11 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import Welcome from "../pages/general/Welcome";
 import Login from "../pages/general/Login";
 import LayoutOperator from "./LayoutOperator";
+import LayoutManager from "./LayoutManager";
 import Landing from "../pages/both/Landing";
 // import { useAuth } from './AuthContext';
+import AddOperator from "../pages/AddOperator"; 
 
 const Router = () => {
-    const user = "operator";
+    const user = "manager";
     return(
         <Routes>
             {user?(
@@ -27,6 +29,10 @@ const Router = () => {
                             <Route path="/Contact" element={<Contact />} />
                             <Route path="*" element={<NotFound/>} />
                         </Route> */}
+                        <Route path="/" element={<LayoutManager />}>
+                            <Route path="/add-operator" element={<AddOperator />} />
+                            {/* Other routes for manager */}
+                        </Route>
                     </>
                 ) : user == "operator"?(
                 <>
