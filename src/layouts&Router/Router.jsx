@@ -12,6 +12,7 @@ import Dashboard from "../pages/dashboardoperator/overview";
 import RealTimeMonitoring from "../pages/dashboardoperator/RealTimeMonitoring";
 import ProductionTraffic from "../pages/dashboardoperator/ProductionTraffic";
 import Energytracking from "../pages/dashboardoperator/Energytracking";
+import AddOperator from "../pages/Manager/AddOperator";
 // import { useAuth } from './AuthContext';
 import AddOperator from "../pages/AddOperator"; 
 import OperatorList from "../components/OperatorList";
@@ -23,6 +24,7 @@ const Router = () => {
             {user?(
                 user == "manager"? (
                     <>
+                        <Route path="/addoperator" element={<AddOperator/>}/>
                         {/* <Route path="/" element={<LayoutManager/>}>
                             <Route path="/" element={<UserHome/>} />
                             <Route path="/search" element={<Recherche/>} />
